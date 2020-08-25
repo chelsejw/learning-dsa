@@ -31,6 +31,31 @@ class SinglyLinkedList {
         this.length++;
         return this
     }
+
+    traverse(){
+        let current = this.head;
+        while (current) {
+            console.log(current.value)
+            current = current.next;
+        }
+    }
+
+    pop(){
+        let current = this.head
+
+        /* Find the second to last node, where it's next node is the tail node
+            - Have two variables - current vs previous
+            - Previous is null, current is this.head
+                - Edge case: One value in list
+                    - If current.next==null, means there is only one value.
+                    - return this.head = null;
+            - While the current node's next value is not null,
+                - If this is the tail node, 1) set this.tail = previous, THEN this.tail.next = null
+        */
+
+        
+                
+    }
 }
 
 const makeStringLinkedList = (sentence) => {
@@ -40,4 +65,6 @@ const makeStringLinkedList = (sentence) => {
     return list
 }
 
-console.log(makeStringLinkedList("Hello, my name is Chelsea and I'm tryna do some DATA STRUCTURES, man."))
+const list = makeStringLinkedList("Hello, my name is Chelsea and I'm tryna do some DATA STRUCTURES, man.")
+
+list.traverse()

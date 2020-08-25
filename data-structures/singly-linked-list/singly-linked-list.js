@@ -122,6 +122,20 @@ class SinglyLinkedList {
        this.length++;
        return this;
     }
+
+    //Hello there my name is Chelsea
+    //  0    1    2    3   4    5
+
+    get(index) { // Function: To return the node at a certain position
+        if (index < 0 || index > this.length-1) return null;
+        let currentPosition = 0;
+        let currentNode = this.head;
+        while (currentPosition < index) {
+            currentNode = currentNode.next;
+            currentPosition++;
+        }
+        return currentNode;
+    }
 }
 
 const makeLinkedList = (sentence) => {

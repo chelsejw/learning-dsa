@@ -136,6 +136,14 @@ class SinglyLinkedList {
         }
         return currentNode;
     }
+
+    set(index, newValue) { //Change value of a node at a specified index
+        if (index < 0 || index > this.length - 1) return null;
+        let node = this.get(index);
+        node.value = newValue
+        return this;
+    }
+
 }
 
 const makeLinkedList = (sentence) => {
@@ -145,20 +153,6 @@ const makeLinkedList = (sentence) => {
     for (word of words) list.push(word)
     return list
 }
-
-const testMethods = (list, method, argument) => {
-    console.log(`Testing Method:`, method)
-    console.log(`Original list:`, list)
-
-    //If there is an argument, use it.
-    let returnValue = argument ? list[method](argument) : list[method]();
-    console.log(`Return value of the method ${method} is:`, returnValue);
-    console.log(`Updated List:`, list)
-    console.log(`=====================================================================`)
-}
-// testMethods(makeStringLinkedList("Hello there milove"), "shift");
-// testMethods(makeStringLinkedList("Hello there milove"), "pop");
-// testMethods(new SinglyLinkedList(), "unshift", "Hello");
 
 module.exports = {
     Node,

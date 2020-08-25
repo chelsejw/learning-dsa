@@ -138,10 +138,10 @@ class SinglyLinkedList {
     }
 
     set(index, newValue) { //Change value of a node at a specified index
-        if (!this.get(index)) return false;
         let node = this.get(index);
+        if (!node) return false;
         node.value = newValue
-        return this;
+        return true;
     }
 
 }

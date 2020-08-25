@@ -16,12 +16,8 @@ class DoublyLinkedList {
         let values = []
         let current = this.head
         while (current) {
-            values.push({
-                value: current.value,
-                next: current.next,
-                prev: current.prev
-            })
-            current = current.next;
+            values.push(current.value)
+            current = current.next
         }
         return console.log(values)
     }
@@ -52,6 +48,18 @@ class DoublyLinkedList {
         this.length--;
         return oldHead
     }
+
+    set(index, value) {
+        if (index < 0 || index > this.length) return false
+        let currentIndex = 0;
+        let current = this.head;
+        while (currentIndex < index) {
+            current = current.next;
+            currentIndex++;
+        }
+        current.value = value;
+        return true;
+    }
 }
 
 const createDoubleLinkedList = (arr) => {
@@ -61,8 +69,6 @@ const createDoubleLinkedList = (arr) => {
     return list;
 }
 
-let list = createDoubleLinkedList([1])
-const shift = list.shift()
+let list = createDoubleLinkedList([1,2,3,4,5])
+list.set(2, 55)
 list.print();
-
-console.log(`Removed node`, shift)

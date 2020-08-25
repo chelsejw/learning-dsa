@@ -32,3 +32,11 @@ class SinglyLinkedList {
     }
 }
 
+const makeStringLinkedList = (sentence) => {
+    let list = new SinglyLinkedList();
+    const words = sentence.split(" ")
+    for (word of words) list.push(word)
+    return list
+}
+
+console.log(makeStringLinkedList("Hello, my name is Chelsea and I'm tryna do some DATA STRUCTURES, man."))

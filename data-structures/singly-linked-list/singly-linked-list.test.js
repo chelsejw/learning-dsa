@@ -68,11 +68,11 @@ test("longString.set(1, 'hello')'s value at position 1 should be 'hello'.", () =
 });
 
 
-test("longString.set(6, 'hello') should return null", () => {
-  expect(longString.set(6, "hello")).toBe(null);
+test("longString.set(6, 'hello') should return false", () => {
+  expect(longString.set(6, "hello")).toBe(false);
 });
 
 
 test("longString.set(-3, 'hello') should return null", () => {
-  expect(longString.set(-3, "hello")).toBe(null);
+  expect(longString.set(-3, "hello")).toBe(false);
 });

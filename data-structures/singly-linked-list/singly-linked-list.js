@@ -144,6 +144,38 @@ class SinglyLinkedList {
         return true;
     }
 
+    insert(index, value) { // Insert a new node after the node at the index specified
+        if (index < 0 || index > this.length) return false;
+        if (index==this.length) {
+            this.push(value);
+            return true;
+        } else if (index==0) {
+            this.unshift(value);
+            return true;
+        } else {
+            let newNode = new Node(value);
+            let currentNodeAtIndex = this.get(index - 1);
+            newNode.next = currentNodeAtIndex.next;
+            currentNodeAtIndex.next = newNode;
+            this.length++;
+            return true;
+        }
+    }
+
+    remove(index) {
+        // Remove the node at the index
+        // Update the node at the position before it to point to the node at the position after index
+
+        if (index < 0 || index > this.length) return undefined;
+        if (index==length-1) return this.pop();
+        if (index==0) return this.shift();
+        let nodeBeforeIndex = this.get(index-1);
+        let nodeToRemove = nodeBeforeIndex.next
+        nodeBeforeIndex.next = nodeToRemove.next;
+        this.length--;
+        return nodeToRemove;
+    }
+
 }
 
 const makeLinkedList = (sentence) => {
@@ -153,6 +185,14 @@ const makeLinkedList = (sentence) => {
     for (word of words) list.push(word)
     return list
 }
+
+const longString = makeLinkedList("Hello");
+
+console.log(longString)
+longString.insert(1, "x2")
+console.log(longString.get(0))
+console.log(longString.get(1));
+
 
 module.exports = {
     Node,

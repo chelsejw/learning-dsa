@@ -70,5 +70,5 @@ const createDoubleLinkedList = (arr) => {
 }
 
 let list = createDoubleLinkedList([1,2,3,4,5])
-list.set(2, 55)
+list.set(5, 55)
 list.print();

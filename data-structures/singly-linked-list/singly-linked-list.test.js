@@ -56,17 +56,27 @@ test("longString.get(6) should return null", () => {
 // TESTS FOR .SET METHOD
 
 test("longString.set(5, 'Misty')'s tail value should be 'Misty'.", ()=> {
-    expect(longString.set(5, 'Misty').tail.value).toBe('Misty')
+    let temp = longString
+    temp.set(5, 'Misty')
+    expect(temp.tail.value).toBe('Misty')
 })
 
+
+test("longString.set(5, 'Misty') should return true", () => {
+  expect(longString.set(5, "Misty")).toBe(true);
+});
+
 test("longString.set(0, 'Hey')'s head value should be 'Hey'.", () => {
-  expect(longString.set(0, "Hey").head.value).toBe("Hey");
+    let temp = longString;
+    temp.set(0, "Hey");
+    expect(temp.head.value).toBe("Hey");
 });
 
 test("longString.set(1, 'hello')'s value at position 1 should be 'hello'.", () => {
-  expect(longString.set(1, 'hello').get(1).value).toBe("hello");
+    let temp = longString;
+    temp.set(1, "hello");
+    expect(temp.get(1).value).toBe("hello");
 });
-
 
 test("longString.set(6, 'hello') should return false", () => {
   expect(longString.set(6, "hello")).toBe(false);

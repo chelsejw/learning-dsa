@@ -149,7 +149,7 @@ const createDoubleLinkedList = (arr) => {
     return list;
 }
 
-let list = createDoubleLinkedList([1,2,3])
-list.insert(1, "XX")
-list.print();
-console.log(list)
+let list = createDoubleLinkedList([5,10,15,20])
+console.log(list.set(0,10))
+console.log(list.length)
+console.log(list.head.value)

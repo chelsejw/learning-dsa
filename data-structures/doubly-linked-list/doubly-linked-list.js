@@ -133,12 +133,6 @@ class DoublyLinkedList {
         if (index===this.length-1) return !!this.push(value)
         let newNode = new Node(value);
         let currentNodeAtIndex = this.get(index);
-        /* 
-        newNode.prev = prevNode
-        newNode.next = prevNode.next
-        PrevNode.next = newNode
-        newNode.next.prev = newNode
-        */
         newNode.next = currentNodeAtIndex.next;
         newNode.prev = currentNodeAtIndex;
         currentNodeAtIndex.next = newNode;

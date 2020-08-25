@@ -107,6 +107,21 @@ class SinglyLinkedList {
         if (!this.head) this.tail = null;
         return oldHead
     }
+
+    unshift(value) { // Function: to add a new node to the beginning of the linked list.
+        if (this.length==0) {
+            this.push(value);
+            return this;
+        }
+        /* The new node's next value should point to the current head.
+        Set head to new node.
+        */
+       let newNode = new Node(value);
+       newNode.next = this.head
+       this.head = newNode;
+       this.length++;
+       return this;
+    }
 }
 
 const makeStringLinkedList = (sentence) => {
@@ -116,13 +131,16 @@ const makeStringLinkedList = (sentence) => {
     return list
 }
 
-const testMethods = (list, method) => {
+const testMethods = (list, method, argument) => {
     console.log(`Testing Method:`, method)
     console.log(`Original list:`, list)
-    let item = list[method]();
-    console.log(`Return value of the method ${method} is:`, item);
+
+    //If there is an argument, use it.
+    let returnValue = argument ? list[method](argument) : list[method]();
+    console.log(`Return value of the method ${method} is:`, returnValue);
     console.log(`Updated List:`, list)
     console.log(`=====================================================================`)
 }
-testMethods(makeStringLinkedList("Hello there milove"), "shift");
-testMethods(makeStringLinkedList("Hello there milove"), "pop");
+// testMethods(makeStringLinkedList("Hello there milove"), "shift");
+// testMethods(makeStringLinkedList("Hello there milove"), "pop");
+testMethods(new SinglyLinkedList(), "unshift", "Hello");

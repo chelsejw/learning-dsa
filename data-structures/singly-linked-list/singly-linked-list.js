@@ -63,7 +63,7 @@ class SinglyLinkedList {
 
         /* This while loop will not run when there is only one item in the list.
          Because current.next would be null*/
-         
+
         while (current.next) {
             previous = current;
             current = current.next;
@@ -98,6 +98,15 @@ class SinglyLinkedList {
 
         return current;
     }
+
+    shift() { // Function: To remove the first node of the linked list
+        if (this.length==0) return undefined;
+        let oldHead = this.head
+        this.head = this.head.next;
+        this.length--;
+        if (!this.head) this.tail = null;
+        return oldHead
+    }
 }
 
 const makeStringLinkedList = (sentence) => {
@@ -107,9 +116,13 @@ const makeStringLinkedList = (sentence) => {
     return list
 }
 
-const list = makeStringLinkedList("Hello")
-list.traverse()
-let lastItem = list.pop()
-console.log(`Last item is`, lastItem)
-console.log(`Updated list:`)
-console.log(list)
+const testMethods = (list, method) => {
+    console.log(`Testing Method:`, method)
+    console.log(`Original list:`, list)
+    let item = list[method]();
+    console.log(`Return value of the method ${method} is:`, item);
+    console.log(`Updated List:`, list)
+    console.log(`=====================================================================`)
+}
+testMethods(makeStringLinkedList("Hello there milove"), "shift");
+testMethods(makeStringLinkedList("Hello there milove"), "pop");

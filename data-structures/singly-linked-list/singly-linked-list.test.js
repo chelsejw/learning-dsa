@@ -1,4 +1,4 @@
-const {Node, SinglyLinkedList, makeLinkedList} = require('./main')
+const {Node, SinglyLinkedList, makeLinkedList} = require('./singly-linked-list')
 
 const empty = makeLinkedList()
 const oneItem = makeLinkedList("Hello")

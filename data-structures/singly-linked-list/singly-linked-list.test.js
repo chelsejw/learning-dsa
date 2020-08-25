@@ -39,10 +39,10 @@ const threeItems = makeLinkedList("Hello there Chelsea")
 const longString = makeLinkedList("Hello there my name is Chelsea");
 
 test("longString.get(4) should return node with a value of 'is'", ()=> {
-    expect(longString.get(4)).toBe("is")
+    expect(longString.get(4).value).toBe("is")
 })
 test("longString.get(0) should return node with a value of 'Hello'", () => {
-  expect(longString.get(0)).toBe("Hello");
+  expect(longString.get(0).value).toBe("Hello");
 });
 test("longString.get(-1) should return null", () => {
   expect(longString.get(-1)).toBe(null);

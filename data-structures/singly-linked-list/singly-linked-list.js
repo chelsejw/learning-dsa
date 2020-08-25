@@ -42,6 +42,25 @@ class SinglyLinkedList {
 
     pop(){
         let current = this.head
+        let previous = null;
+
+        // List with only one item.
+        if (!current.next) {
+            this.head = null;
+            return this
+        }
+
+        while (current) {
+            if (current==this.tail) {
+                const lastNode = this.tail
+                this.tail = previous
+                this.tail.next = null;
+                this.length--
+                return lastNode
+            }
+            previous = current;
+            current = current.next;
+        }
 
         /* Find the second to last node, where it's next node is the tail node
             - Have two variables - current vs previous
@@ -50,10 +69,10 @@ class SinglyLinkedList {
                     - If current.next==null, means there is only one value.
                     - return this.head = null;
             - While the current node's next value is not null,
-                - If this is the tail node, 1) set this.tail = previous, THEN this.tail.next = null
+                - If this is the tail node, 1) set this.tail = previous, THEN this.tail.next = null, and then this.length--
+                - If it is NOT the tail node, set previous = current, THEN current = current.next
         */
 
-        
                 
     }
 }
@@ -66,5 +85,8 @@ const makeStringLinkedList = (sentence) => {
 }
 
 const list = makeStringLinkedList("Hello, my name is Chelsea and I'm tryna do some DATA STRUCTURES, man.")
-
 list.traverse()
+let lastItem = list.pop()
+console.log(`Last item is`, lastItem)
+console.log(`Updated list:`)
+console.log(list)

@@ -41,40 +41,46 @@ class SinglyLinkedList {
     }
 
     pop(){
-        let current = this.head
-        let previous = null;
-
-        // List with only one item.
-        if (!current.next) {
-            this.head = null;
-            return this
-        }
-
-        while (current) {
-            if (current==this.tail) {
-                const lastNode = this.tail
-                this.tail = previous
-                this.tail.next = null;
-                this.length--
-                return lastNode
-            }
-            previous = current;
-            current = current.next;
-        }
-
-        /* Find the second to last node, where it's next node is the tail node
+           /* Basically: Remove the last item from the list, and update the tail values
+    
+            - Edge case: no items in list, return undefined.
             - Have two variables - current vs previous
             - Previous is null, current is this.head
-                - Edge case: One value in list
-                    - If current.next==null, means there is only one value.
-                    - return this.head = null;
+                - Edge case: No nodes
+                    - If list.length==0; return undefined
             - While the current node's next value is not null,
                 - If this is the tail node, 1) set this.tail = previous, THEN this.tail.next = null, and then this.length--
+                - Edge case: only one item in list
+                    - Then the HEAD should be = null as well
+                    - And no need to update the tail node's next value, because tail node would be null.
                 - If it is NOT the tail node, set previous = current, THEN current = current.next
         */
 
-                
-    }
+           // List with no items.
+           if (this.length == 0 || !this.head) {
+             return undefined;
+           }
+           let current = this.head;
+           let previous = null;
+
+           while (current) {
+             if (current == this.tail) {
+               const lastNode = this.tail;
+               this.tail = previous;
+               //Edge case: there was only one item in list, so the tail node is now null.
+               if (!this.tail) {
+                 this.head = null;
+                 //If not, the head value should be the same, and we can assign null to the tail node's next value.
+               } else {
+                 this.tail.next = null;
+               }
+               this.length--;
+               return lastNode;
+             }
+             previous = current;
+             current = current.next;
+           }
+         }
 }
 
 const makeStringLinkedList = (sentence) => {
@@ -84,7 +90,7 @@ const makeStringLinkedList = (sentence) => {
     return list
 }
 
-const list = makeStringLinkedList("Hello, my name is Chelsea and I'm tryna do some DATA STRUCTURES, man.")
+const list = makeStringLinkedList("Hello baby")
 list.traverse()
 let lastItem = list.pop()
 console.log(`Last item is`, lastItem)

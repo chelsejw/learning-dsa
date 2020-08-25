@@ -58,8 +58,12 @@ class DoublyLinkedList {
         if (this.length==0) return undefined;
         const oldHead = this.head
         this.head = this.head.next
+        //If there is a next node after removing the old one, set its previous value to be null
         if (this.head) {
             this.head.prev = null;
+        //If there are no more nodes (this.head===null)
+        } else {
+            this.tail = null;
         }
         this.length--;
         return oldHead
@@ -93,6 +97,7 @@ const createDoubleLinkedList = (arr) => {
     return list;
 }
 
-let list = createDoubleLinkedList([])
-console.log(list.pop())
+let list = createDoubleLinkedList([1,2])
+console.log(list.shift())
 list.print()
+console.log(list)

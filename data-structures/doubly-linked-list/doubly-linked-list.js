@@ -34,9 +34,9 @@ class DoublyLinkedList {
             this.length++;
             return this;
         }
-        node.prev = this.tail;
-        this.tail.next = node;
-        this.tail = node;
+        node.prev = this.tail; // New node's previous value should be the current tail
+        this.tail.next = node; // The current tail's next value should be the new node
+        this.tail = node; // The new tail should be the new node
         this.length++;
         return this;
     }

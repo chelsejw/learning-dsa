@@ -35,6 +35,21 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+
+    pop(){
+        if (this.length===0 || !this.head) return undefined
+        let removedNode = this.tail;
+        if (this.length===1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            let newLast = this.tail.prev;
+            newLast.next = null;
+            this.tail = newLast;
+        }
+        this.length--;
+        return removedNode
+    }
     
 
     shift() {
@@ -78,9 +93,6 @@ const createDoubleLinkedList = (arr) => {
     return list;
 }
 
-let list = createDoubleLinkedList([1,2,3,4,5])
-console.log(list.get(0))
-console.log(list.get(1))
-list.set(0, 44)
-list.print();
-console.log(list)
+let list = createDoubleLinkedList([])
+console.log(list.pop())
+list.print()

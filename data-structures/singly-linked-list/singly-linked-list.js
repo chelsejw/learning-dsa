@@ -165,7 +165,6 @@ class SinglyLinkedList {
     remove(index) {
         // Remove the node at the index
         // Update the node at the position before it to point to the node at the position after index
-
         if (index < 0 || index > this.length) return undefined;
         if (index==length-1) return this.pop();
         if (index==0) return this.shift();
@@ -174,6 +173,34 @@ class SinglyLinkedList {
         nodeBeforeIndex.next = nodeToRemove.next;
         this.length--;
         return nodeToRemove;
+    }
+
+    reverse(){
+        //Swap head & tail
+        if (this.lengh==0) return undefined
+        if (this.length==1) return this;
+        let node = this.head
+        this.head = this.tail;
+        this.tail = node;
+        let next = null;
+        let prev = null;
+        for (let i=0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this.print();
+    }
+
+    print() {
+        const arr = []
+        let current = this.head;
+        while (current) {
+            arr.push(current.value);
+            current = current.next;
+        }
+        return arr.join(" ")
     }
 
 }
@@ -186,12 +213,9 @@ const makeLinkedList = (sentence) => {
     return list
 }
 
-const longString = makeLinkedList("Hello");
+const longString = makeLinkedList("I am Chelsea");
 
-console.log(longString)
-longString.insert(1, "x2")
-console.log(longString.get(0))
-console.log(longString.get(1));
+console.log(longString.reverse())
 
 
 module.exports = {

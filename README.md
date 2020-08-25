@@ -1,6 +1,4 @@
 # Learning Data Structures and Algorithms
-With Colt Steele's Udemy course and Interview Cake
-
 
 Topic | Notes | Implementation | Practice
 --- | --- | --- | ---
@@ -11,7 +9,7 @@ Binary Heaps | N/A | N/A | N/A
 Hash Tables | N/A | N/A | Inflight Entertainment, Permutation Palindrome, Word Cloud Data, Top Scores
 Graphs | N/A | N/A | Graph Coloring, MeshMessage, Dijkstra's Algorithm
 
-# Notes: Data Structures
+# Data Structures
 
 ## Singly Linked Lists
 
@@ -134,4 +132,4 @@ O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 #### Compared to... 
 
 
-# Notes: Algorithms
+# Algorithms

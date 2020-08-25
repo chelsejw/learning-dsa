@@ -149,12 +149,12 @@ class DoublyLinkedList {
 }
 
 const createDoubleLinkedList = (arr) => {
- 
     const list = new DoublyLinkedList();
     for (item of arr) list.push(item)
     return list;
 }
 
 let list = createDoubleLinkedList([1,2,3])
-console.log(list.insert(1, 3))
+list.insert(1, "XX")
 list.print();
+console.log(list)

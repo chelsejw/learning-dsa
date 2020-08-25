@@ -38,6 +38,8 @@ const threeItems = makeLinkedList("Hello there Chelsea")
 
 const longString = makeLinkedList("Hello there my name is Chelsea");
 
+// TESTS FOR .GET METHOD
+
 test("longString.get(4) should return node with a value of 'is'", ()=> {
     expect(longString.get(4).value).toBe("is")
 })
@@ -49,4 +51,28 @@ test("longString.get(-1) should return null", () => {
 });
 test("longString.get(6) should return null", () => {
   expect(longString.get(6)).toBe(null);
+});
+
+// TESTS FOR .SET METHOD
+
+test("longString.set(5, 'Misty')'s tail value should be 'Misty'.", ()=> {
+    expect(longString.set(5, 'Misty').tail.value).toBe('Misty')
+})
+
+test("longString.set(0, 'Hey')'s head value should be 'Hey'.", () => {
+  expect(longString.set(0, "Hey").head.value).toBe("Hey");
+});
+
+test("longString.set(1, 'hello')'s value at position 1 should be 'hello'.", () => {
+  expect(longString.set(1, 'hello').get(1).value).toBe("hello");
+});
+
+
+test("longString.set(6, 'hello') should return null", () => {
+  expect(longString.set(6, "hello")).toBe(null);
+});
+
+
+test("longString.set(-3, 'hello') should return null", () => {
+  expect(longString.set(-3, "hello")).toBe(null);
 });

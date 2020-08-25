@@ -56,42 +56,48 @@ class SinglyLinkedList {
                 - If it is NOT the tail node, set previous = current, THEN current = current.next
         */
 
-           // List with no items.
-           if (this.length == 0 || !this.head) return undefined
-           let current = this.head;
-           let previous = current;
+        // List with no items.
+        if (this.length == 0 || !this.head) return undefined
+        let current = this.head;
+        let previous = current;
 
-           while (current.next) {
+        /* This while loop will not run when there is only one item in the list.
+         Because current.next would be null*/
+         
+        while (current.next) {
+            previous = current;
+            current = current.next;
+            /* ATTEMPT 1
+                if (current == this.tail) {
+                this.tail = previous;
+                //Edge case: there was only one item in list, so the tail node is now null.
+                if (!this.tail) {
+                    this.head = null;
+                    //If not, the head value should be the same, and we can assign null to the tail node's next value.
+                } else {
+                    this.tail.next = null;
+                }
+                this.length--;
+                return current;
+                }
                 previous = current;
                 current = current.next;
-                /* ATTEMPT 1
-                    if (current == this.tail) {
-                    this.tail = previous;
-                    //Edge case: there was only one item in list, so the tail node is now null.
-                    if (!this.tail) {
-                        this.head = null;
-                        //If not, the head value should be the same, and we can assign null to the tail node's next value.
-                    } else {
-                        this.tail.next = null;
-                    }
-                    this.length--;
-                    return current;
-                    }
-                    previous = current;
-                    current = current.next;
-                    }
-                */
-           }
-            this.length--;
-            if (this.length == 0) {
-                this.head = null;
-                this.tail = null;
-            } else {
-                this.tail = previous;
-                this.tail.next = null;
-            }
-           return current;
+                }
+            */
         }
+        
+        this.length--;
+
+        if (this.length == 0) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = previous;
+            this.tail.next = null;
+        }
+
+        return current;
+    }
 }
 
 const makeStringLinkedList = (sentence) => {
@@ -101,7 +107,7 @@ const makeStringLinkedList = (sentence) => {
     return list
 }
 
-const list = makeStringLinkedList("Hello there Chelsea")
+const list = makeStringLinkedList("Hello")
 list.traverse()
 let lastItem = list.pop()
 console.log(`Last item is`, lastItem)

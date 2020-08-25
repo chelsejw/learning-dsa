@@ -11,125 +11,125 @@ Graphs | N/A | N/A | Graph Coloring, MeshMessage, Dijkstra's Algorithm
 
 # Data Structures
 
-## Singly Linked Lists
+### Singly Linked Lists
 
-#### Characteristics
+##### Characteristics
 - Has a head and tail
 - Consists of nodes that hold a value
 - Each node has a unidirectional pointer to the next node
 
 
-#### Pros
+##### Pros
 - Quick insertions & deletions
 
 
-#### Cons
+##### Cons
 - Slow access (can't immediately access at an index, has to traverse down the list)
 
-#### Big O
+##### Big O
 
 Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
 
-#### Singly Linked Lists vs Arrays
+##### Singly Linked Lists vs Arrays
 - Arrays are indexed in order, lists have no indexes
 - Arrays can have expensive insertion/deletion because everything must be re-indexed
 - Random access is quicker with arrays, as items can be accessed with a specific index
 
-## Doubly Linked Lists
+### Doubly Linked Lists
 
-#### Characteristics
+##### Characteristics
 
-#### Pros
+##### Pros
 
-#### Cons
+##### Cons
 
-#### Big O
+##### Big O
 Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-#### Doubly Linked Lists vs X
+##### Doubly Linked Lists vs X
 
-## Stacks & Queues
+### Stacks & Queues
 
-#### Characteristics
+##### Characteristics
 
-#### Pros
+##### Pros
 
-#### Cons
+##### Cons
 
-#### Big O
+##### Big O
 Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-#### Compared to... 
+##### Compared to... 
 
 
-#### Doubly Linked Lists vs X
+##### Doubly Linked Lists vs X
 
-## Binary Search Trees
+### Binary Search Trees
 
-#### Characteristics
+##### Characteristics
 
-#### Pros
+##### Pros
 
-#### Cons
+##### Cons
 
-#### Big O
+##### Big O
 Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-#### Compared to... 
+##### Compared to... 
 
-## Binary Heaps
+### Binary Heaps
 
-#### Characteristics
+##### Characteristics
 
-#### Pros
+##### Pros
 
-#### Cons
+##### Cons
 
-#### Big O
+##### Big O
 Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-#### Compared to... 
+##### Compared to... 
 
-## Hash Tables
+### Hash Tables
 
-#### Characteristics
+##### Characteristics
 
-#### Pros
+##### Pros
 
-#### Cons
+##### Cons
 
-#### Big O
+##### Big O
 Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-#### Compared to... 
+##### Compared to... 
 
-## Graphs
+### Graphs
 
-#### Characteristics
+##### Characteristics
 
-#### Pros
+##### Pros
 
-#### Cons
+##### Cons
 
-#### Big O
+##### Big O
 Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-#### Compared to... 
+##### Compared to... 
 
 
 # Algorithms

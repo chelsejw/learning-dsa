@@ -51,7 +51,6 @@ class DoublyLinkedList {
         return removedNode
     }
     
-
     shift() {
         //The new head = currentHead.next 
         //New head's previous value should be null;
@@ -89,17 +88,17 @@ class DoublyLinkedList {
         const half = Math.floor(this.length/2) 
         let currentIndex;
         let current;
-        if (index <= half) {
+        if (index <= half) { //If the index you want to find is in the first half, start from the head.
             currentIndex = 0;
             current = this.head;
-            while (currentIndex < index) { 
+            while (currentIndex < index) {  // Traverse through the list until you reach the target index.
                 current = current.next;
                 currentIndex++;
             }
-        } else if (index > half) {
+        } else if (index > half) { //If the index is in the second half, start from the tail
             currentIndex = this.length-1;
             current = this.tail;
-            while (currentIndex > index) {
+            while (currentIndex > index) { // Traverse through list until you reach the target index.
               current = current.prev;
               currentIndex--;
             }

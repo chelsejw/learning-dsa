@@ -114,6 +114,18 @@ class DoublyLinkedList {
         node.value = value;
         return true;
     }
+
+    remove(index) {
+        if (index<0 || index >= this.length) return undefined;
+        if (index===0) return this.shift();
+        if (index===this.length-1) return this.pop();
+        let removedNode = this.get(index);
+        removedNode.prev.next = removedNode.next;
+        removedNode.next.prev = removedNode.prev;
+        removedNode.prev = null;
+        removedNode.next = null;
+        return removedNode;
+    }
 }
 
 const createDoubleLinkedList = (arr) => {
@@ -124,4 +136,5 @@ const createDoubleLinkedList = (arr) => {
 }
 
 let list = createDoubleLinkedList([1,2,3,4,5,6,7,8,9,10])
-console.log(list.get(6))
+console.log(list.remove(4))
+list.print();

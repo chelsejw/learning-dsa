@@ -57,30 +57,41 @@ class SinglyLinkedList {
         */
 
            // List with no items.
-           if (this.length == 0 || !this.head) {
-             return undefined;
-           }
+           if (this.length == 0 || !this.head) return undefined
            let current = this.head;
-           let previous = null;
+           let previous = current;
 
-           while (current) {
-             if (current == this.tail) {
-               const lastNode = this.tail;
-               this.tail = previous;
-               //Edge case: there was only one item in list, so the tail node is now null.
-               if (!this.tail) {
-                 this.head = null;
-                 //If not, the head value should be the same, and we can assign null to the tail node's next value.
-               } else {
-                 this.tail.next = null;
-               }
-               this.length--;
-               return lastNode;
-             }
-             previous = current;
-             current = current.next;
+           while (current.next) {
+                previous = current;
+                current = current.next;
+                /* ATTEMPT 1
+                    if (current == this.tail) {
+                    this.tail = previous;
+                    //Edge case: there was only one item in list, so the tail node is now null.
+                    if (!this.tail) {
+                        this.head = null;
+                        //If not, the head value should be the same, and we can assign null to the tail node's next value.
+                    } else {
+                        this.tail.next = null;
+                    }
+                    this.length--;
+                    return current;
+                    }
+                    previous = current;
+                    current = current.next;
+                    }
+                */
            }
-         }
+            this.length--;
+            if (this.length == 0) {
+                this.head = null;
+                this.tail = null;
+            } else {
+                this.tail = previous;
+                this.tail.next = null;
+            }
+           return current;
+        }
 }
 
 const makeStringLinkedList = (sentence) => {
@@ -90,7 +101,7 @@ const makeStringLinkedList = (sentence) => {
     return list
 }
 
-const list = makeStringLinkedList("Hello baby")
+const list = makeStringLinkedList("Hello there Chelsea")
 list.traverse()
 let lastItem = list.pop()
 console.log(`Last item is`, lastItem)

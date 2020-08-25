@@ -124,7 +124,8 @@ class SinglyLinkedList {
     }
 }
 
-const makeStringLinkedList = (sentence) => {
+const makeLinkedList = (sentence) => {
+    if (!sentence) return new SinglyLinkedList();
     let list = new SinglyLinkedList();
     const words = sentence.split(" ")
     for (word of words) list.push(word)
@@ -143,4 +144,10 @@ const testMethods = (list, method, argument) => {
 }
 // testMethods(makeStringLinkedList("Hello there milove"), "shift");
 // testMethods(makeStringLinkedList("Hello there milove"), "pop");
-testMethods(new SinglyLinkedList(), "unshift", "Hello");
+// testMethods(new SinglyLinkedList(), "unshift", "Hello");
+
+module.exports = {
+    Node,
+    SinglyLinkedList,
+    makeLinkedList
+}

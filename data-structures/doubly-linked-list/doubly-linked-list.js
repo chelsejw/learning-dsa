@@ -28,17 +28,26 @@ class DoublyLinkedList {
 
     push(value) {
         let node = new Node(value)
-        if (this.length==0) {
-            this.head = node;
-            this.tail = node;
-            this.length++;
-            return this;
+        if (this.length == 0) {
+          this.head = node;
+          this.tail = node;
+        } else {
+          node.prev = this.tail; // New node's previous value should be the current tail
+          this.tail.next = node; // The current tail's next value should be the new node
+          this.tail = node; // The new tail should be the new node
         }
-        node.prev = this.tail; // New node's previous value should be the current tail
-        this.tail.next = node; // The current tail's next value should be the new node
-        this.tail = node; // The new tail should be the new node
         this.length++;
         return this;
+    }
+
+    shift() {
+        //The new head = currentHead.next 
+        //New head's previous value should be null;
+        const oldHead = this.head
+        this.head = this.head.next
+        this.head.prev = null;
+        this.length--;
+        return oldHead
     }
 }
 
@@ -50,5 +59,7 @@ const createDoubleLinkedList = (arr) => {
 }
 
 let list = createDoubleLinkedList([1,2,5,6])
-
+const shift = list.shift()
 list.print();
+
+console.log(`Removed node`, shift)

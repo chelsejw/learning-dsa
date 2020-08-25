@@ -35,6 +35,7 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+    
 
     shift() {
         //The new head = currentHead.next 
@@ -48,16 +49,24 @@ class DoublyLinkedList {
         this.length--;
         return oldHead
     }
-
-    set(index, value) {
-        if (index < 0 || index > this.length) return false
+    
+    get(index){
+        if (index < 0 || index > this.length - 1) return false;
         let currentIndex = 0;
         let current = this.head;
         while (currentIndex < index) {
-            current = current.next;
-            currentIndex++;
+          current = current.next;
+          currentIndex++;
         }
-        current.value = value;
+        return current;
+    }
+
+    set(index, value) {
+        let node = this.get(index);
+        if (!node) {
+            return false
+        }
+        node.value = value;
         return true;
     }
 }
@@ -70,5 +79,8 @@ const createDoubleLinkedList = (arr) => {
 }
 
 let list = createDoubleLinkedList([1,2,3,4,5])
-list.set(5, 55)
+console.log(list.get(0))
+console.log(list.get(1))
+list.set(0, 44)
 list.print();
+console.log(list)

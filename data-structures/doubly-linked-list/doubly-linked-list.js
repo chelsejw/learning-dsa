@@ -43,9 +43,12 @@ class DoublyLinkedList {
     shift() {
         //The new head = currentHead.next 
         //New head's previous value should be null;
+        if (this.length==0) return undefined;
         const oldHead = this.head
         this.head = this.head.next
-        this.head.prev = null;
+        if (this.head) {
+            this.head.prev = null;
+        }
         this.length--;
         return oldHead
     }
@@ -58,7 +61,7 @@ const createDoubleLinkedList = (arr) => {
     return list;
 }
 
-let list = createDoubleLinkedList([1,2,5,6])
+let list = createDoubleLinkedList([1])
 const shift = list.shift()
 list.print();
 

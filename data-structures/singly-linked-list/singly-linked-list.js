@@ -134,7 +134,7 @@ class SinglyLinkedList {
             currentNode = currentNode.next;
             currentPosition++;
         }
-        return currentNode;
+        return currentNode.value;
     }
 }
 

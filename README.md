@@ -38,18 +38,29 @@ O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 - Arrays can have expensive insertion/deletion because everything must be re-indexed
 - Random access is quicker with arrays, as items can be accessed with a specific index
 
-### Stacks & Queues
 
-##### Characteristics
+### Queues
 
-##### Pros
+#### Characteristics
+- Similar to linked lists
+- Has a first-in, first-out order
 
-##### Cons
+#### Uses
+- Printing queues
+- Web server requests - handled in order they are received
+- CPU processes
 
-##### Big O
-Insertion | Removal | Searching | Access
----|---|---|---
-O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
+#### Pros
+- Fast operations -- everything takes O(1) time
+- Good for breadth-first search
+
+#### Cons
+- Like linked lists, no random access
+
+#### Big O
+Space | Enqueue (Insert) | Dequeue (Remove) | Peek 
+---|---|---|---|---
+O(n) | O(1) | O(1) | O(1)
 
 
 ### Binary Search Trees

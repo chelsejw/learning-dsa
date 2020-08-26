@@ -42,7 +42,7 @@ O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
 #### Characteristics
 - Similar to linked lists
-- Has a first-in, first-out order
+- Has a first-in, first-out order (FIFO)
 
 #### Uses
 - Printing queues
@@ -58,6 +58,31 @@ O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
 #### Big O
 Space | Enqueue (Insert) | Dequeue (Remove) | Peek 
+---|---|---|---
+O(n) | O(1) | O(1) | O(1)
+
+
+### Stacks
+
+#### Characteristics
+- LIFO (last in, first out order) – think a stack of plates
+
+#### Uses
+- Call stacks
+- Undo/Redo
+- DFS uses a stack to keep track of which nodes to visit next
+- Storing the history of things
+- String parsing
+
+#### Pros
+- Fast operations -- everything takes O(1) time
+- Good for breadth-first search
+
+#### Cons
+- Like linked lists, no random access
+
+#### Big O 
+Space | Push | Pop | Peek 
 ---|---|---|---
 O(n) | O(1) | O(1) | O(1)
 

@@ -11,7 +11,7 @@ function kthToLastNode(k, head) {
   //Traverse through list once to get length
   while (current) {
     length++;
-    if (!current.next && k===1) return current;
+      if (!current.next.next && k === 1) return current;
     current = current.next;
   }
   if (k > length) return undefined;

@@ -11,7 +11,7 @@ class Stack {
     constructor() {
         this.first = null;
         this.last = null;
-        this.length = 0
+        this.size = 0
     }
 
     push(value) {
@@ -25,11 +25,12 @@ class Stack {
             newNode.next = temp;
             this.first = newNode;
         }
-        this.length++;
+        this.size++;
         return this;
     }
 
     pop() {
+        if (!this.first) return null //stack is empty;
         const temp = this.first
         if (this.length === 1) {
             this.last = null;
@@ -37,7 +38,7 @@ class Stack {
         } else {
             this.first = temp.next;
         }
-        this.length--;
+        this.size--;
         return temp;
     }
 }

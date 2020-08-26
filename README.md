@@ -38,21 +38,6 @@ O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 - Arrays can have expensive insertion/deletion because everything must be re-indexed
 - Random access is quicker with arrays, as items can be accessed with a specific index
 
-### Doubly Linked Lists
-
-##### Characteristics
-
-##### Pros
-
-##### Cons
-
-##### Big O
-Insertion | Removal | Searching | Access
----|---|---|---
-O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
-
-##### Doubly Linked Lists vs X
-
 ### Stacks & Queues
 
 ##### Characteristics
@@ -66,10 +51,6 @@ Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-##### Compared to... 
-
-
-##### Doubly Linked Lists vs X
 
 ### Binary Search Trees
 
@@ -84,7 +65,6 @@ Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-##### Compared to... 
 
 ### Binary Heaps
 
@@ -99,7 +79,6 @@ Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-##### Compared to... 
 
 ### Hash Tables
 
@@ -114,7 +93,6 @@ Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-##### Compared to... 
 
 ### Graphs
 
@@ -129,7 +107,6 @@ Insertion | Removal | Searching | Access
 ---|---|---|---
 O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
-##### Compared to... 
 
 
 # Algorithms

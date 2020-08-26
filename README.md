@@ -1,3 +1,13 @@
+<style>
+thead {
+    background-color: #2b2d2f;
+}
+
+h3 {
+    color: darkred;
+}
+</style>
+
 # Learning Data Structures and Algorithms
 
 Topic | Notes | Implementation | Practice

@@ -22,35 +22,17 @@ function containsCycle(firstNode) {
   //If there is no next node, there is no cycle
   if (!firstNode || !firstNode.next) return false;
 
-  class Runner {
-      constructor(type, node) {
-          this.type = type;
-          this.node = node;
-      }
-
-      run(){
-          if (this.type=='fast') {
-              this.node = this.node.next.next
-          } else {
-              this.node = this.node.next
-          }
-          return this
-        }
-    }
-    const firstRunner = new Runner('fast', firstNode)
-    const secondRunner = new Runner('slow', firstNode);
-    // console.log(`First runner's node is now`, firstRunner.node);
-    // console.log(`second runner's node is now`, secondRunner.node);
+    const firstRunner = firstNode
+    const secondRunner = firstNode
 
     //while firstRunner hasn't reached the end of a list
-    while (firstRunner.node || firstRunner.node.next) {
-        firstRunner.run();
-        secondRunner.run();
+    while (firstRunner && firstRunner.next) {
+        firstRunner = firstRunner.next.next
+        secondRunner = secondRunner.next
 
         // console.log(`After a run, first runner's node is now`, firstRunner.node)
         // console.log(`After a run, second runner's node is now`, secondRunner.node);
-        if (!firstRunner.node) return false
-        if (firstRunner.node==secondRunner.node) return true;
+        if (firstRunner==secondRunner) return true;
     }
     return false
 }

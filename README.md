@@ -59,7 +59,7 @@ O(1) | Best case: O(1) vs Worst Case: O(n) | O(n) | O(n)
 
 #### Big O
 Space | Enqueue (Insert) | Dequeue (Remove) | Peek 
----|---|---|---|---
+---|---|---|---
 O(n) | O(1) | O(1) | O(1)
 
 

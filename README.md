@@ -2,7 +2,7 @@
 
 Topic | Notes | Implementation | Practice
 --- | --- | --- | ---
-Linked Lists | ✅ | ✅ | Delete Node, Reverse, Does This Linked List Have a Cycle?, Kth to Last Node in a Singly-Linked List, Find Repeat, Space Edition
+Linked Lists | ✅ | ✅ | ✅  Delete Node, Reverse, ✅  Does This Linked List Have a Cycle?, Kth to Last Node in a Singly-Linked List, Find Repeat, Space Edition
 Stacks & Queues | N/A | N/A | Largest Stack, Implement A Queue With Two Stacks, Parenthesis Matching, Bracket Validator
 Binary Search Trees | N/A | N/A | Balanced Binary Tree, Binary Search Tree Checker, 2nd Largest Item in a Binary Search Tree, Find Repeat, Space Edition
 Binary Heaps | N/A | N/A | N/A

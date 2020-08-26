@@ -12,7 +12,7 @@ Graphs | N/A | N/A | Graph Coloring, MeshMessage, Dijkstra's Algorithm
 # Data Structures
 
 ### Linked Lists
-##### Characteristics
+#### Characteristics
 - Has a head and tail
 - Consists of nodes that hold a value
 - Each node has a uni/bidirectional pointer to the next (and previous, for doubly linked list) node

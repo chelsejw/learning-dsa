@@ -38,8 +38,29 @@ class BinarySearchTree {
             }
         }
         return this
-
     }
+
+    find(val) {
+
+        if (!this.root) return false
+
+        let pointer = this.root 
+
+        while (pointer) {
+            if (pointer.val==val) {
+                return pointer
+            }
+
+            if (val < pointer.val) {
+                pointer = pointer.left
+            } else if (val > pointer.val) {
+                pointer = pointer.right
+            }
+        }
+
+        return false
+    }
+
 }
 
 let a = new Node(5)

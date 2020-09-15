@@ -14,33 +14,35 @@ class BinaryTreeNode {
       this.right = new BinaryTreeNode(value);
       return this.right;
     }
-  }
+}
   
-  function isBalanced(treeRoot) {
-  
-    // Determine if the tree is superbalance
-    
-    
-    let leafNodes = []
-    
-    const getLeaves = (nodes = [], pointer) => {
-      
-      if (!pointer.right && !pointer.left) {
-        return nodes.push(pointer)
-      } if (pointer.right) {
-        getLeaves(nodes, pointer.right)
-      } else if (pointer.left) {
-        getLeaves(nodes, pointer.left)
-      }
+function isBalanced(treeRoot) {
+
+  let leaves = []
+  // Determine if the tree is superbalance    
+  const getLeaves = (pointer, arr) => {
+    if (!pointer.right && !pointer.left) {
+      return [...arr, pointer]
+    } else if (pointer.right) {
+      return [...arr, getLeaves(pointer.right, arr)]
+    } else if (pointer.left) {
+      return [...arr, getLeaves(pointer.right, arr)]
     }
-    
-    let leafNodes = getLeaves()
-  
-    return false;
   }
   
+  let leafNodes = getLeaves(treeRoot, leaves);
+
+  console.log(leafNodes)
+
+  return false; 
+}
+
+
+function logTree(root) {
   
-  
+}
+
+
   
   
   

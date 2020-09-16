@@ -11,7 +11,6 @@ class HashTable {
           let value = char.charCodeAt(0) - 96;
           total = (total * WEIRD_PRIME + value) % this.keyMap.length;
         }
-        console.log(`Hash is ${total}`);
         return total;
     }
 
@@ -30,15 +29,15 @@ class HashTable {
         const hashVal = this.keyMap[hashedIdx];
         if (!hashVal) return undefined; // No value set yet
         for (let i=0; i < hashVal.length; i++) {
-            if (hashVal[i][0]===key) return hashVal[i];
+            if (hashVal[i][0]===key) return hashVal[i][1];
         }
     }
 
 }
 
-const hashy = new HashTable(30);
+const hashy = new HashTable();
 hashy.set('name', 'chelsea')
 
 hashy.set('age', 45)
 console.log(hashy.keyMap);
-console.log(hashy.get('age'));
+console.log(hashy.get("age"));

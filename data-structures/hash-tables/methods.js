@@ -18,18 +18,22 @@ class HashTable {
     set(key, val) {
         const hashedIdx = this._hash(key);
         const kvPair = [key, val];
-        if (this.keyMap[hashedIdx]) {
-            //If it is already a nested array
-            if (this.keyMap[hashedIdx][0].constructor === Array) this.keyMap[hashedIdx].push(kvPair);
-
-            //If it is not a nested array (should only happen during the first collision.)
-            else {
-                this.keyMap[hashedIdx] = [this.keyMap[hashedIdx], kvPair];
-            }
+        if (!this.keyMap[hashedIdx]) {
+            this.keyMap[hashedIdx] = [];
         }
-        else this.keyMap[hashedIdx] = kvPair;
+        this.keyMap[hashedIdx].push(kvPair)
         return this.keyMap[hashedIdx];
     }
+
+    get(key) {
+        const hashedIdx = this._hash(key);
+        const hashVal = this.keyMap[hashedIdx];
+        if (!hashVal) return undefined; // No value set yet
+        for (let i=0; i < hashVal.length; i++) {
+            if (hashVal[i][0]===key) return hashVal[i];
+        }
+    }
+
 }
 
 const hashy = new HashTable(30);
@@ -37,3 +41,4 @@ hashy.set('name', 'chelsea')
 
 hashy.set('age', 45)
 console.log(hashy.keyMap);
+console.log(hashy.get('age'));

@@ -37,9 +37,10 @@ class HashTable {
         const values = []
         for (let i=0; i < this.keyMap.length; i++){
             if (this.keyMap[i]) {
-                for (let j=0; j<this.keyMap[i].length; j++){
-                    if (!values.includes(this.keyMap[i][j]))
-                      values.push(this.keyMap[i][j][1]);
+                for (let j=0; j < this.keyMap[i].length; j++){
+                    if (!values.includes(this.keyMap[i][j][1])){
+                        values.push(this.keyMap[i][j][1]);
+                    }
                 };
             }
         }
@@ -51,6 +52,7 @@ class HashTable {
 
 const hashy = new HashTable();
 hashy.set('name', 'chelsea')
+hashy.set("frfrf", 45);
 
 hashy.set('age', 45)
 console.log(hashy.keyMap);

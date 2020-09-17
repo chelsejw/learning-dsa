@@ -18,13 +18,21 @@ class Graph{
         this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(item => item!==vertex1);
     }
 
+    // removeVertex(vertex){
+    //     const connections = this.adjacencyList[vertex];
+    //     for (let i=0; i < connections.length; i++) {
+    //         this.removeEdge(vertex, connections[i]);
+    //     };
+    //     delete this.adjacencyList[vertex];
+    //     return this.adjacencyList;
+    // }
+
     removeVertex(vertex){
-        const connections = this.adjacencyList[vertex];
-        for (let i=0; i < connections.length; i++) {
-            this.removeEdge(vertex, connections[i]);
-        };
+        while (this.adjacencyList[vertex].length){
+            const adjVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex, adjVertex);
+        }
         delete this.adjacencyList[vertex];
-        return this.adjacencyList;
     }
 
 }
